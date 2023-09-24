@@ -1,0 +1,15 @@
+table td {
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+    .col-md-6 {
+      margin-bottom: 30px; /* Adjust the margin as needed */
+    }
+  }
+
+
+
+
+
+
