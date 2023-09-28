@@ -490,7 +490,7 @@ h6 {
   background: #5cb874;
 }
 
-#hero .btn-get-started {
+.btn-get-started {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -505,7 +505,7 @@ h6 {
   background: #5cb874;
 }
 
-#hero .btn-get-started:hover {
+.btn-get-started:hover {
   background: #6ec083;
 }
 
@@ -850,6 +850,10 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+.btn-success{
+  background-color: #5cb874;
 }
 
 
