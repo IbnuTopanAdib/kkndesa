@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Post;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class PostDashboardController extends Controller
@@ -11,9 +12,9 @@ class PostDashboardController extends Controller
      */
     public function index()
     {
-        // $posts = Post::latest()->get();
+        $posts = Post::latest()->get();
 
-        return view('post.index-template');
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -107,6 +108,11 @@ class PostDashboardController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $image_path ='storage/'. $post->poster;
+        if (File::exists(public_path( $image_path ))){
+            unlink($image_path);
+         }
+        Post::destroy($post->id);
+        return redirect('post/')->with('success','Data berhasil dihapus');
     }
 }

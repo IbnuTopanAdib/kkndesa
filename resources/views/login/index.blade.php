@@ -126,7 +126,7 @@
                                 <div class="text-center mt-5"><button type="submit"
                                         class="btn-get-started animate__animated animate__fadeInUp px-5 mb-5 w-100">Login</button>
                                 </div>
-                                <div class="text-center mt-5"><a href="/posts-dashboard"
+                                <div class="text-center mt-5"><a href="/post"
                                         class="btn-get-started animate__animated animate__fadeInUp px-5 mb-5 w-100">Login</a>
                                 </div>
                             </form>

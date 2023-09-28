@@ -1,4 +1,5 @@
 @extends('layouts/main')
+@section('active0', 'active')
 
 @section('content')
 <h1 class="mb-5 text-center">{{ $title }}</h1>

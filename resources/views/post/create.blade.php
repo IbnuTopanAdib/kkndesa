@@ -29,7 +29,7 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class=" mb-3">
+                <div class="mb-3">
                     <label for="body">Isi Berita</label>
                     <input id="body" value="{{ old('body') }}" type="hidden" name="body">
                     <trix-editor input="body"></trix-editor>

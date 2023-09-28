@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostDashboardController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Routing\Events\Routing;
 
@@ -40,7 +41,7 @@ Route::get('/home#about', function () {
 });
 
 Route::resource('/post', PostDashboardController::class);
-
+Route::get('/dashboard',[DashboardController::class,'index']);
 
 Route::get('/admin',[LoginController::class, 'index']);
 

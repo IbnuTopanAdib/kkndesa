@@ -1,4 +1,5 @@
 @extends('layouts/main')
+@section('active1', 'active')
 @section('content')
     <h1 class="mb-3 text-center">{{ $title }}</h1>
     <div class="row justify-content-center mb-3">

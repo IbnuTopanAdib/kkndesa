@@ -226,7 +226,7 @@
         &copy; Copyright <strong><span>Karyamulya。</span></strong> All Rights Reserved
       </div>
       <div class="credits">
-        Designed by <a href="https://www.instagram.com/kkn2023.karyamulya2/">KKN Karyamulya 2023</a>
+        Designed by <a href="https://www.instagram.com/kkn2023.karyamulya1/">KKN Karyamulya 2023</a>
       </div>
     </div>
   </footer><!-- End Footer -->

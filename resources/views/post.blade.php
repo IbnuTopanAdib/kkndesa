@@ -1,4 +1,5 @@
 @extends('layouts/main')
+@section('active1', 'active')
 
 @section('content')
     <div class="row justify-content-center">
