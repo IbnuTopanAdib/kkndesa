@@ -11,9 +11,9 @@ class PostDashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->get();
+        // $posts = Post::latest()->get();
 
-        return view('post.index', compact('posts'));
+        return view('post.index-template');
     }
 
     /**
@@ -44,10 +44,10 @@ class PostDashboardController extends Controller
                 $filename= "poster-" . time() . "." .$ext;
                 request()->poster->move(public_path('storage/'), $filename);
                 $validate['poster'] = $filename;
-    
+
             }
 
-            
+
 
             Post::create($validate);
             return redirect('post/')->with('success','Data berhasil ditambah');
@@ -96,7 +96,7 @@ class PostDashboardController extends Controller
                 $filename= "poster-" . time() . "." .$ext;
                 request()->poster->move(public_path('storage/'), $filename);
                 $validate['poster'] = $filename;
-    
+
             }
             Post::where('id', $post->id)->update($validate);
             return redirect('posts-dashboard/')->with('success','Data berhasil diupdate');
