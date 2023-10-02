@@ -6,7 +6,7 @@
         <div class="col-md-8">
 
             <h2 class="text-center">{{ $post->judul }}</h2>
-            <img src="https://source.unsplash.com/1200x400/?{{ $post->judul }}" class="card-img-top" alt="{{ $post->judul }}"
+            <img src="{{ asset('storage/' . $post->poster) }}" class="card-img-top" alt="{{ $post->judul }}"
                 class="img-fluid">
             <article class="my-3">
                 {!! $post->body !!}

@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="/niceadmin/assets/img/favicon.png" rel="icon">
-    <link href="/niceadmin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/assets/img/aa.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -44,19 +44,14 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-            <img src="/niceadmin/assets/img/logo.png" alt="">
-            <span class="d-none d-lg-block">NiceAdmin</span>
+        <a href="/dashboard" class="logo d-flex align-items-center">
+            
+            <span class="d-none d-lg-block">Karyamulya.</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-    <div class="search-bar">
-        <form class="search-form d-flex align-items-center" method="POST" action="#">
-            <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-        </form>
-    </div><!-- End Search Bar -->
+
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
@@ -282,15 +277,10 @@
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
             <a class="nav-link " href="/post">
-                <i class="bi bi-journal-text"></i><span>Forms</span>
+                <i class="bi bi-journal-text"></i><span>Postingan</span>
             </a>
-        </li><!-- End Dashboard Nav -->
-        <li class="nav-item">
-            <a class="nav-link" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>Profile</span>
-            </a>
-        </li><!-- End Profile Page Nav -->
+        </li>
+
 
         <li class="nav-item">
             <a class="nav-link" href="pages-faq.html">
@@ -299,19 +289,7 @@
             </a>
         </li><!-- End F.A.Q Page Nav -->
 
-        <li class="nav-item">
-            <a class="nav-link" href="pages-contact.html">
-                <i class="bi bi-envelope"></i>
-                <span>Contact</span>
-            </a>
-        </li><!-- End Contact Page Nav -->
 
-        <li class="nav-item">
-            <a class="nav-link" href="pages-register.html">
-                <i class="bi bi-card-list"></i>
-                <span>Register</span>
-            </a>
-        </li><!-- End Register Page Nav -->
     </ul>
 
 </aside><!-- End Sidebar-->

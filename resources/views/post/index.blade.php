@@ -1,7 +1,10 @@
 @extends('layouts.master')
 
 @section('container')
-    <a href="/post/create" class="btn btn-primary mx-10"> Tambah</a>
+<div class="d-flex me-5">
+    <a href="/post/create" class="btn btn-primary ms-auto"><i class="bi bi-file-earmark-plus"></i> Tambah Berita</a>
+</div>
+
     @if (session()->has('success'))
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -23,27 +26,28 @@
         </thead>
         <tbody>
             @foreach ($posts as $post)
-            <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $post->judul }}</td>
-                <td>{{ $post->slug }}</td>
-                <td>{!! $post->excerpt !!}</td>
-                
-                <td>{{ date('d-m-Y', strtotime($post->created_at)) }}</td>
-                <td>
-                    <div class="d-flex inline">
-                        <a href="{{ route('post.show', ['post' => $post->id]) }}" class="btn btn-info mx-1">Tampil</a>
-                        <a href="{{ route('post.edit', ['post' => $post->id]) }}" class="btn btn-warning mx-1">Edit</a>
-                        <form action="{{ route('post.destroy', ['post' => $post->id]) }}" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <button type="submit" class="btn btn-danger mx-1" onclick="return confirm('Apakah kamu yakin?')">Hapus</button>
-                        </form>
-                    </div>
-                </td>
-            </tr>
-        @endforeach
-        
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $post->judul }}</td>
+                    <td>{{ $post->slug }}</td>
+                    <td>{!! $post->excerpt !!}</td>
+
+                    <td>{{ date('d-m-Y', strtotime($post->created_at)) }}</td>
+                    <td>
+                        <div class="d-flex inline">
+                            <a href="{{ route('post.show', ['post' => $post->id]) }}" class="btn btn-info mx-1">Tampil</a>
+                            <a href="{{ route('post.edit', ['post' => $post->id]) }}" class="btn btn-warning mx-1">Edit</a>
+                            <form action="{{ route('post.destroy', ['post' => $post->id]) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-danger mx-1"
+                                    onclick="return confirm('Apakah kamu yakin?')">Hapus</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+
         </tbody>
     </table>
 @endsection

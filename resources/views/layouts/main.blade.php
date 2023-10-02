@@ -70,9 +70,9 @@
               <ul>
                 <li><a class="nav-link scrollto" href="/home#hero">Home</a></li>
                 <li><a class="nav-link scrollto" href="/home#about">About</a></li>
+                <li><a class="nav-link scrollto" href="/home#contact">Kontak</a></li>
                 <li><a class="nav-link @yield('active0')" href="/profile">Profile desa</a></li>
                 <li><a class="nav-link @yield('active1')" href="/blog">Blog</a></li>
-                <li><a class="nav-link scrollto" href="/home#contact">Kontak</a></li>
               </ul>
               <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

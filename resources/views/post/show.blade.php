@@ -6,6 +6,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="d-flex inline">
+                <a href="/post" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Back
+                </a>
                 <a href="{{ route('post.show', ['post' => $post->id]) }}" class="btn btn-info mx-1">Tampil</a>
                 <a href="{{ route('post.edit', ['post' => $post->id]) }}" class="btn btn-warning mx-1">Edit</a>
                 <form action="{{ route('post.destroy', ['post' => $post->id]) }}" method="POST">

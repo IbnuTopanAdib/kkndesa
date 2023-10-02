@@ -17,6 +17,8 @@ use Illuminate\Routing\Events\Routing;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/admin',[LoginController::class, 'index'])->name('login')->middleware('guest');;
+Route::post('/login',[LoginController::class, 'authenticate']);
 
 Route::get('/', function () {
     return view('index');
@@ -40,10 +42,9 @@ Route::get('/home#about', function () {
     return view('index');
 });
 
-Route::resource('/post', PostDashboardController::class);
-Route::get('/dashboard',[DashboardController::class,'index']);
+Route::resource('/post', PostDashboardController::class)->middleware('auth');
+Route::get('/dashboard',[DashboardController::class,'index'])->middleware('auth');
 
-Route::get('/admin',[LoginController::class, 'index']);
 
 
 Route::get('/blog', [PostController::class,'index']);

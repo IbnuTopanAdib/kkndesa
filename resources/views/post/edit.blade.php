@@ -4,6 +4,9 @@
 
 
         <div class="col-md-8">
+            <a href="/post" class="btn btn-secondary my-5">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
             <form action="{{ route('post.update', ['post' => $post->id]) }}"
                 method="post" enctype="multipart/form-data">
                 @csrf

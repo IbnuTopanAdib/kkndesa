@@ -71,11 +71,10 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="/home#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="/home#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="/home#contact">Kontak</a></li>
                     <li><a class="nav-link" href="/profile">Profile desa</a></li>
-
                     <li><a class="nav-link" href="/blog">Blog</a></li>
 
-                    <li><a class="nav-link scrollto" href="/home#contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -91,43 +90,56 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3">
-                        @if (session()->has('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ session('success') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
-                        @endif
+
 
                         <h2 class="text-center mt-5">Login</h2>
 
                         <div class="card my-5">
+                            @if (session()->has('success'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('success') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @endif
+                            @if (session()->has('loginError'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ session('loginError') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @endif
 
-                            <form class="card-body cardbody-color p-lg-5">
+                            <form class="card-body cardbody-color p-lg-5" action="/login" method="post">
+                                @csrf
 
                                 <div class="text-center">
                                     <img src="/assets/img/aa.png"
                                         class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3 bg-green"
                                         width="200px" alt="profile">
                                 </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="email"
-                                        placeholder="email">
-                                    <label for="email">Username</label>
-
+                                <div class="form-floating">
+                                    <input type="email" name="email"
+                                        class="form-control @error('email') is-invalid @enderror" id="email"
+                                        placeholder="name@example.domain" autofocus value="{{ old('email') }}">
+                                    <label for="email">Email</label>
+                                    @error('email')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
+
+
+
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="password"
+                                    <input type="password" name="password" class="form-control" id="password"
                                         placeholder="password">
                                     <label for="password">Password</label>
 
                                 </div>
-                                <div class="text-center mt-5"><button type="submit"
-                                        class="btn-get-started animate__animated animate__fadeInUp px-5 mb-5 w-100">Login</button>
-                                </div>
-                                <div class="text-center mt-5"><a href="/post"
-                                        class="btn-get-started animate__animated animate__fadeInUp px-5 mb-5 w-100">Login</a>
+                                <div class="text-center"><button type="submit"
+                                        class="btn btn-color px-5 mb-5 w-100">Login</button>
                                 </div>
                             </form>
                         </div>

@@ -4,6 +4,9 @@
 
 
         <div class="col-md-8">
+            <a href="/post" class="btn btn-secondary my-5">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
             <form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class=" mb-3">
@@ -50,5 +53,4 @@
             </form>
         </div>
     </div>
-
 @endsection
