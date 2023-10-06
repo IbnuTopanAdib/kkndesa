@@ -6,9 +6,9 @@
         <div class="col-md-6">
             <form action="/blog" method="GET">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search...." name="search"
+                    <input type="text" class="form-control" placeholder="Cari berita..." name="search"
                         value="{{ request('search') }}">
-                    <button type="submit" class="btn btn-get-started">Saerch</button>
+                    <button type="submit" class="btn btn-get-started">Cari</button>
                 </div>
             </form>
         </div>
@@ -16,8 +16,7 @@
 
     @if ($posts->count())
         <div class="card mb-3">
-            <img src="{{ asset('storage/' . $posts[0]->poster) }}" class="card-img-top"
-                alt="{{ $posts[0]->judul }}">
+            <img src="{{ asset('storage/' . $posts[0]->poster) }}" class="card-img-top" alt="{{ $posts[0]->judul }}">
             <div class="card-body text-center">
                 <a href="/blog/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">
                     <h5 class="card-title">{{ $posts[0]->judul }}</h5>
@@ -55,7 +54,9 @@
             </div>
         </div>
     @else
-        <p class="text-center fs-4">No Post Found</p>
+        <div style="height: 70vh">
+            <p class="text-center fs-4">No Post Found</p>
+        </div>
     @endif
 
     <div class="mt-5">
