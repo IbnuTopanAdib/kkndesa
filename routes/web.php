@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostDashboardController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Routing\Events\Routing;
 use App\Models\Post;
@@ -19,7 +19,7 @@ use App\Models\Post;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/admin',[LoginController::class, 'index'])->name('login')->middleware('guest');;
+Route::get('/admin',[LoginController::class, 'index'])->name('login');
 Route::post('/login',[LoginController::class, 'authenticate']);
 
 Route::get('/', [HomeController::class, 'index']);
@@ -41,8 +41,7 @@ Route::get('/home#contact',[HomeController::class, 'index']);
 Route::get('/home#about', [HomeController::class, 'index']);
 
 Route::resource('/post', PostDashboardController::class)->middleware('auth');
-Route::get('/dashboard',[DashboardController::class,'index'])->middleware('auth');
-
+Route::resource('/faq', ContactController::class)->middleware('auth');
 
 Route::post('/logout',[LoginController::class, 'logout']);
 Route::get('/blog', [PostController::class,'index']);

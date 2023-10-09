@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Post::factory(50)->create();
         for($i = 0; $i <10 ; $i++){
-            Contact::factory(50)->create([
+            Contact::create([
                 'name' => 'japrak',
                 'email' => 'japrak@gmail.com',
                 'subject' => 'AKu cinta kamu',
