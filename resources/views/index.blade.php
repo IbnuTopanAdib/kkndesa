@@ -66,11 +66,11 @@
 
                 <!-- Slide 1 -->
                 @foreach ($posts as $post)
-                    <div class="carousel-item active" style="background-image: {{ asset('storage/' . $post->poster) }}">
+                    <div class="carousel-item active" style=" background-image: url({{ asset('storage/'. $post->poster) }}); background-size: cover;">
                         <div class="carousel-container">
-                            <div class="container">
+                            <div class="container text-white">
                                 <h2 class="animate__animated animate__fadeInDown">{{ $post->judul }}</h2>
-                                <p class="animate__animated animate__fadeInUp">{{ $post->excerpt }}</p>
+                                <p class="animate__animated animate__fadeInUp">{!! $post->excerpt !!}</p>
                                 <a href="/blog/{{ $post->slug }}"
                                     class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
                                     More</a>

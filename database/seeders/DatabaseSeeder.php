@@ -17,16 +17,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory()->create([
             'email' => 'resyaderesya@gmail.com',
-            'password' => 'KaryamulyaKKN2023',
+            'password' => 'konz123',
         ]);
-        Post::factory(50)->create();
-        for($i = 0; $i <10 ; $i++){
-            Contact::create([
-                'name' => 'japrak',
-                'email' => 'japrak@gmail.com',
-                'subject' => 'AKu cinta kamu',
-                'body' => 'Rose is red and violet is blue You must believe that I love you'
-            ]);
-        }
     }
 }
